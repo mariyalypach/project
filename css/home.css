@@ -1,0 +1,243 @@
+.sidebar {
+    height: 100%;
+    width: 11.9rem;
+    position: fixed;
+    top: 2.7rem;
+    z-index: 1;
+    overflow-x: hidden;
+    padding-top: 20px;
+}
+
+.sidebar-item {
+    padding: 1rem .2rem;
+    text-decoration: none;
+    position: relative;
+    font-size: 1.5rem;
+    display: block;
+    border-bottom: 1px solid #bbb;
+    cursor: pointer;
+}
+
+.sidebar .link {
+    color: #2D476B;
+}
+
+.sidebar .link-collapsed:after {
+    content: '';
+    position: absolute;
+    right: 1rem;
+    top: 2rem;
+    border-left: .455rem solid transparent;
+    border-right: .455rem solid transparent;
+    border-top: .63rem solid #2D476B;
+}
+
+.sidebar .link-expanded:after {
+    border: 0;
+    content: "";
+    display: block;
+    width: 0;
+    height: 0;
+    border-left: .455rem solid transparent;
+    border-right: .455rem solid transparent;
+    border-bottom: .63rem solid #2D476B;
+}
+
+.sidebar-submenu {
+    display: none;
+    padding: 0;
+}
+
+.sidebar-submenu .sidebar-submenu-item {
+    position: relative;
+}
+
+.sidebar-submenu .sidebar-submenu-collapsed:after {
+    content: '';
+    position: absolute;
+    right: .8rem;
+    top: 1rem;
+    border-left: .455rem solid transparent;
+    border-right: .455rem solid transparent;
+    border-top: .63rem solid #2D476B;
+}
+
+.sidebar-submenu .sidebar-submenu-expanded:after {
+    border: 0;
+    content: "";
+    display: block;
+    width: 0;
+    height: 0;
+    border-left: .455rem solid transparent;
+    border-right: .455rem solid transparent;
+    border-bottom: .63rem solid #2D476B;
+}
+
+.sidebar-submenu-l2 {
+    display: none;
+}
+
+.sidebar-submenu-item-l2 {
+    padding: 0;
+}
+
+.sidebar-icon {
+    display: none;
+    position: fixed;
+    top: 4.7rem;
+    left: 0;
+    z-index: 2;
+    padding: .8rem 1rem;
+    background: #E83E8C;
+    cursor: pointer;
+}
+
+.sidebar-close {
+    display: none;
+    width: 100%;
+    padding: .5rem;
+    background: #E83E8C;
+    cursor: pointer;
+}
+
+.close-text {
+    font-size: 1.5rem;
+    color: #fff;
+    text-align: center;
+    margin: 0;
+}
+
+/*==========SLIDER==========*/
+
+.top-banner {
+    z-index: 0;
+}
+
+#slides{
+    position: relative;
+    height: 30rem;
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+    z-index: -1;
+}
+
+.slide{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    -webkit-transition: opacity 1s;
+    -moz-transition: opacity 1s;
+    -o-transition: opacity 1s;
+    transition: opacity 1s;
+}
+
+.showing{
+    opacity: 1;
+}
+
+
+.slide{
+    font-size: 40px;
+    padding: 40px;
+    box-sizing: border-box;
+    background: #333;
+    color: #fff;
+    background-size: cover;
+}
+
+.slide:nth-of-type(1){
+    background-image: url('../img/slide-1.jpg');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.slide:nth-of-type(2){
+    background-image: url('../img/slide-2.jpg');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.slide:nth-of-type(3){
+    background-image: url('../img/slide-3.jpg');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.slider{
+    position: relative;
+}
+
+.search-block {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+    z-index: 1
+}
+
+.svg-logo {
+    font-size: 2rem;
+}
+
+.search-input {
+    width: 30rem;
+    height: 3rem;
+    border: none;
+    font-size: 1.5rem;
+    padding-left: 1rem;
+    float: left;
+    outline: none;
+}
+
+.search-button {
+    height: 3rem;
+    font-size: 1.2rem;
+    padding: .7rem;
+    color: #fff;
+    background: #E83E8C;
+    border: none;
+    cursor: pointer;
+    outline: none;
+    transition: background-color .5s ease .01ms;
+}
+
+.search-button:hover {
+    background: #D82E7C;
+}
+
+.form-holder {
+    background-color: rgba(0,0,0,0.3);
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -o-border-radius: 5px;
+    padding: 5px;
+}
+
+.search-title {
+    color: #fff;
+    text-align: center;
+    font-size: 2rem;
+}
+
+.search-text {
+    color: #fff;
+    text-align: center;
+    font-size: 1.2rem;
+    padding-top: 1rem;
+}
+
+.background-search {
+    display: none;
+}
+
+.active {
+    display: block;
+}

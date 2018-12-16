@@ -1,0 +1,222 @@
+@media screen and (max-width: 1200px) {
+    .navigation-item .link {
+        padding: 1.5rem .5rem;
+        font-size: .8rem;
+    }
+
+    .sidebar {
+        width: 10rem;
+    }
+
+}
+
+
+@media screen and (min-width: 993px) and (max-width: 1200px) {
+
+}
+
+@media screen and (max-width: 992px) {
+    .navigation-item {
+        display: none;
+    }
+
+    .burger-menu {
+        display: block;
+    }
+
+    .authentication {
+        float: right;
+    }
+
+    .sidebar {
+        width: 4rem;
+    }
+
+    .sidebar-icon {
+        display: block;
+    }
+
+    .link-collapsed .triangle-bottom {
+        display: none;
+    }
+
+    .sidebar {
+        display: none;
+        z-index: 3;
+        background: #2D476B;
+        width: 40%;
+        top: 4rem;
+        padding: 0;
+        left: 0;
+    }
+
+    .sidebar-item .link {
+        color: #fff;
+    }
+
+    .sidebar .link-collapsed:after {
+        content: '';
+        position: absolute;
+        right: 1rem;
+        top: 2rem;
+        border-left: .455rem solid transparent;
+        border-right: .455rem solid transparent;
+        border-top: .63rem solid #fff;
+    }
+
+    .sidebar .link-expanded:after {
+        border: 0;
+        content: "";
+        display: block;
+        width: 0;
+        height: 0;
+        border-left: .455rem solid transparent;
+        border-right: .455rem solid transparent;
+        border-bottom: .63rem solid #fff;
+    }
+
+    .sidebar-submenu .sidebar-submenu-collapsed:after {
+        content: '';
+        position: absolute;
+        right: .8rem;
+        top: 1rem;
+        border-left: .455rem solid transparent;
+        border-right: .455rem solid transparent;
+        border-top: .63rem solid #fff;
+    }
+
+    .sidebar-submenu .sidebar-submenu-expanded:after {
+        border: 0;
+        content: "";
+        display: block;
+        width: 0;
+        height: 0;
+        border-left: .455rem solid transparent;
+        border-right: .455rem solid transparent;
+        border-bottom: .63rem solid #fff;
+    }
+
+    .sidebar-submenu-item {
+        color: #fff;
+    }
+
+    .sidebar-close {
+        display: block;
+    }
+
+    .tab-text {
+        font-size: 0;
+    }
+    .tab-text:before {
+        margin: 0;
+    }
+
+    .active {
+        display: block;
+    }
+
+}
+
+@media screen and (min-width: 769px) and (max-width: 991px) {
+
+
+}
+
+@media screen and (max-width: 768px) {
+    /*.sidebar {
+        z-index: 3;
+        background: #2D476B;
+        width: 40%;
+        top: 4rem;
+        padding: 0;
+    }
+
+    .sidebar-item .link {
+        color: #fff;
+    }
+
+    .sidebar .link-collapsed:after {
+        content: '';
+        position: absolute;
+        right: 1rem;
+        top: 2rem;
+        border-left: .455rem solid transparent;
+        border-right: .455rem solid transparent;
+        border-top: .63rem solid #fff;
+    }
+
+    .sidebar .link-expanded:after {
+        border: 0;
+        content: "";
+        display: block;
+        width: 0;
+        height: 0;
+        border-left: .455rem solid transparent;
+        border-right: .455rem solid transparent;
+        border-bottom: .63rem solid #fff;
+    }
+
+    .sidebar-submenu .sidebar-submenu-collapsed:after {
+        content: '';
+        position: absolute;
+        right: .8rem;
+        top: 1rem;
+        border-left: .455rem solid transparent;
+        border-right: .455rem solid transparent;
+        border-top: .63rem solid #fff;
+    }
+
+    .sidebar-submenu .sidebar-submenu-expanded:after {
+        border: 0;
+        content: "";
+        display: block;
+        width: 0;
+        height: 0;
+        border-left: .455rem solid transparent;
+        border-right: .455rem solid transparent;
+        border-bottom: .63rem solid #fff;
+    }
+
+    .sidebar-submenu-item {
+        color: #fff;
+    }*/
+
+    #slides {
+        display: none;
+    }
+
+    /*.sidebar-close {*/
+    /*display: block;*/
+    /*}*/
+
+    .background-search {
+        display: block;
+        position: relative;
+        height: 18rem;
+        padding: 0;
+        margin: 0;
+        list-style-type: none;
+        z-index: -1;
+        background-image: url(../img/slide-2.jpg);
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
+    .search-input {
+        width: 80%;
+    }
+
+    .search-button {
+        width: 20%;
+    }
+
+    .active {
+        display: block;
+    }
+}
+
+@media screen and (max-width: 576px) {
+
+
+}
