@@ -3,9 +3,12 @@ require.config({
 });
 
 require(['routes']);
-require(['main']);
+
 // require(['tabs']);
 require(['home']);
+
 require(['connectionDB']);
+require(['main']);
+
 require(['signUp']);
 // require(['signIn']);

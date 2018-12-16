@@ -88,14 +88,14 @@ define('main', ['DBOpenRequest'], function(DBOpenRequest) {
         }
     };
 
-    SignIn.prototype.init = function () {
+    SignIn.prototype.init = function() {
         var self = this;
-        this.form.addEventListener('submit', function (evt) {
+        this.form.addEventListener('submit', function(evt) {
             self.checkUser(evt);
-        },false);
+        }, false);
     };
 
-    SignIn.prototype.checkUser = function (evt) {
+    SignIn.prototype.checkUser = function(evt) {
         evt.preventDefault();
         for (var i = 0; i < evt.target.length; i++) {
             if (this.input[i]) {
@@ -103,7 +103,7 @@ define('main', ['DBOpenRequest'], function(DBOpenRequest) {
             }
         }
         getPerson(this.user);
-        evt.target.reset();
+        // evt.target.reset();
     };
 
     function getPerson(user) {
@@ -111,18 +111,23 @@ define('main', ['DBOpenRequest'], function(DBOpenRequest) {
             var transaction = db.transaction(["users"], "readwrite");
             var store = transaction.objectStore("users");
             var request = store.openCursor();
-            request.onerror = function(e) {
-                alert('error: ' + e.target.error.name);
-            };
-            request.onsuccess = function(ev) {
-                var res = ev.target.result;
-                if (res) {
-                    var obj = res.value;
-                    if (obj.name === user.name && obj.password === user.password) {
-                        return console.log('Welcome');
+            var indexName = store.index("name");
+            var reqName = indexName.get(user.name);
+            reqName.onsuccess = function(e) {
+                var match = e.target.result;
+                if (match) {
+                    var indexPassword = store.index("password");
+                    var reqPassword = indexPassword.get(user.password);
+                    reqPassword.onsuccess = function(e) {
+                        var match = e.target.result;
+                        if (match) {
+                            console.log('Welcome');
+                        } else {
+                            console.log('Try again');
+                        }
                     }
-                    else { console.log('Try again'); }
-                    res.continue();
+                } else {
+                    console.log('Try again');
                 }
             }
         });
