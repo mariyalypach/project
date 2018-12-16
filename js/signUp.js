@@ -1,6 +1,4 @@
-define(
-    function (require) {
-        var db = require('connectionDB');
+define('signUp', ['DBOpenRequest'], function (DBOpenRequest) {
         function Registration(opts) {
             this.opts = opts;
             this.form = document.querySelector('.sign-up-form');
@@ -28,19 +26,21 @@ define(
             evt.target.reset();
         };
 
-        var reg = new Registration();
-
         function addPerson(user) {
-            var transaction = db.transaction(["users"], "readwrite");
-            var store = transaction.objectStore("users");
-            var request = store.add({ name: user.name, email: user.email, password: user.password });
-            request.onerror = function(e) {
-                alert('error: ' + e.target.error.name);
-            };
+            DBOpenRequest.then(function(db) {
+                var transaction = db.transaction(["users"], "readwrite");
+                var store = transaction.objectStore("users");
+                var request = store.add({ name: user.name, email: user.email, password: user.password });
+                request.onerror = function(e) {
+                    alert('error: ' + e.target.error.name);
+                };
 
-            request.onsuccess = function(e) {
-                alert('success');
-            }
+                request.onsuccess = function(e) {
+                    alert('success');
+                }
+            });
         }
+
+        return Registration;
     }
 );
