@@ -1,4 +1,4 @@
-define(
+define('home', [],
     function () {
         function Slider(opts) {
             this.opts = opts;
@@ -88,7 +88,9 @@ define(
             this.sidebar.classList.toggle('active');
         };
 
-        var slider = new Slider({delay: 3000});
-        var sidebarMenu = new Sidebar({searchString:'link-collapsed', paddingX:2, searchStringL2:'sidebar-submenu-collapsed'});
+        return {
+            Slider: Slider,
+            SidebarMenu: Sidebar
+        }
     }
 );

@@ -1,4 +1,4 @@
-define(['lib/route', 'signUp'], function(router, SignUp) {
+define(['lib/route', 'signUp', 'home'], function(router, SignUp, home) {
     route.base('/');
 
     route('/', function() {
@@ -7,6 +7,9 @@ define(['lib/route', 'signUp'], function(router, SignUp) {
             if (this.readyState === 4 && this.status === 200) {
                 document.getElementById("page").innerHTML =
                     this.responseText;
+
+                new home.Slider({delay:3000});
+                new home.SidebarMenu({searchString:'link-collapsed', paddingX:2, searchStringL2:'sidebar-submenu-collapsed'});
             }
         };
         xhttp.open("GET", "view/home.html", true);

@@ -5,8 +5,7 @@ require.config({
 require(['routes']);
 require(['main']);
 // require(['tabs']);
-// require(['home']);
+require(['home']);
 require(['connectionDB']);
 require(['signUp']);
 // require(['signIn']);
-
