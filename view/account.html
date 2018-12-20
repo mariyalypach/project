@@ -1,57 +1,82 @@
-<!--<section class="account">-->
-    <!--<div class="container">-->
-        <!--<div class="row">-->
-            <!--<div class="col-md-12">-->
-                <!--<h2 class="user-name">Name of user</h2>-->
-                <!--<div class="tabs-block">-->
-                    <!--&lt;!&ndash;<input id="tab1" class="tab-button" type="radio" name="tabs" checked>-->
-                    <!--<label for="tab1" class="label-tab">Text</label>-->
-
-                    <!--<input id="tab2" class="tab-button" type="radio" name="tabs">-->
-                    <!--<label for="tab2" class="label-tab">Audio</label>-->
-
-                    <!--<input id="tab3" class="tab-button" type="radio" name="tabs">-->
-                    <!--<label for="tab3" class="label-tab">Video</label>&ndash;&gt;-->
-                    <!--<ul class="tabs">-->
-                        <!--<li class="tab-button active">-->
-                            <!--<a class="tab-text" href="#">Text</a>-->
-                        <!--</li>-->
-                        <!--<li class="tab-button">-->
-                            <!--<a class="tab-text" href="#">Audio</a>-->
-                        <!--</li>-->
-                        <!--<li class="tab-button">-->
-                            <!--<a class="tab-text" href="#">Video</a>-->
-                        <!--</li>-->
-                    <!--</ul>-->
-
-                    <!--<section class="tab-area active" id="content1">-->
-                        <!--<p>-->
-                            <!--Jerky jowl pork chop tongue, kielbasa shank venison. Capicola shank pig ribeye leberkas filet mignon brisket beef kevin tenderloin porchetta. Capicola fatback venison shank kielbasa, drumstick ribeye landjaeger beef kevin tail meatball pastrami prosciutto pancetta. Tail kevin spare ribs ground round ham ham hock brisket shoulder. Corned beef tri-tip leberkas flank sausage ham hock filet mignon beef ribs pancetta turkey.-->
-                        <!--</p>-->
-                        <!--<p>-->
-                            <!--Bacon ipsum dolor sit amet landjaeger sausage brisket, jerky drumstick fatback boudin.-->
-                        <!--</p>-->
-                    <!--</section>-->
-
-                    <!--<section class="tab-area" id="content2">-->
-                        <!--<p>-->
-                            <!--Bacon ipsum dolor sit amet landjaeger sausage brisket, jerky drumstick fatback boudin.-->
-                        <!--</p>-->
-                        <!--<p>-->
-                            <!--Jerky jowl pork chop tongue, kielbasa shank venison. Capicola shank pig ribeye leberkas filet mignon brisket beef kevin tenderloin porchetta. Capicola fatback venison shank kielbasa, drumstick ribeye landjaeger beef kevin tail meatball pastrami prosciutto pancetta. Tail kevin spare ribs ground round ham ham hock brisket shoulder. Corned beef tri-tip leberkas flank sausage ham hock filet mignon beef ribs pancetta turkey.-->
-                        <!--</p>-->
-                    <!--</section>-->
-
-                    <!--<section class="tab-area" id="content3">-->
-                        <!--<p>-->
-                            <!--Jerky jowl pork chop tongue, kielbasa shank venison. Capicola shank pig ribeye leberkas filet mignon brisket beef kevin tenderloin porchetta. Capicola fatback venison shank kielbasa, drumstick ribeye landjaeger beef kevin tail meatball pastrami prosciutto pancetta. Tail kevin spare ribs ground round ham ham hock brisket shoulder. Corned beef tri-tip leberkas flank sausage ham hock filet mignon beef ribs pancetta turkey.-->
-                        <!--</p>-->
-                        <!--<p>-->
-                            <!--Bacon ipsum dolor sit amet landjaeger sausage brisket, jerky drumstick fatback boudin.-->
-                        <!--</p>-->
-                    <!--</section>-->
-                <!--</div>-->
-            <!--</div>-->
-        <!--</div>-->
-    <!--</div>-->
-<!--</section>-->
+<section class="account">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h2 class="user-name">Name of user</h2>
+                <div class="tabs-block">
+                    <ul class="tabs">
+                        <li class="tab-button">
+                            <a class="tab-text active" data-tab="text" href="#">Text</a>
+                        </li>
+                        <li class="tab-button">
+                            <a class="tab-text" data-tab="audio" href="#">Audio</a>
+                        </li>
+                        <li class="tab-button">
+                            <a class="tab-text" data-tab="video" href="#">Video</a>
+                        </li>
+                    </ul>
+                    <div class="tab-area active" id="text">
+                        <form class="text-form" method="post">
+                            <label for="text-title" class="form-label">Title</label>
+                            <div class="tab-input">
+                                <input type="text" id="text-title" class="input text-input" autocomplete="off" name="textTitle">
+                            </div>
+                            <label for="text-category" class="form-label">Category</label>
+                            <div class="tab-input">
+                                <select name="textCategory" class="input text-input" id="text-category">
+                                    <option value="category-1">Test1</option>
+                                    <option value="category-2">Test2</option>
+                                </select>
+                            </div>
+                            <label for="text-content" class="form-label">Text</label>
+                            <div class="textarea-block">
+                                <textarea name="textContent" id="text-content" class="textarea text-input" cols="30" rows="10"></textarea>
+                            </div>
+                            <input type="submit" class="send-button" value="Save">
+                        </form>
+                    </div>
+                    <div class="tab-area" id="audio">
+                        <form class="audio-form" method="post">
+                            <label for="audio-title" class="form-label">Title</label>
+                            <div class="tab-input">
+                                <input type="text" id="audio-title" class="input audio-input" autocomplete="off" name="audioTitle">
+                            </div>
+                            <label for="audio-category" class="form-label">Category</label>
+                            <div class="tab-input">
+                                <select name="audioCategory" class="input audio-input" id="audio-category">
+                                    <option value="category-1">Test1</option>
+                                    <option value="category-2">Test2</option>
+                                </select>
+                            </div>
+                            <label for="audio-content" class="form-label">Audio File</label>
+                            <div class="tab-input">
+                                <input type="file" id="audio-content" class="input audio-input" autocomplete="off" accept="audio/*" name="audioContent">
+                            </div>
+                            <input type="submit" class="send-button" value="Save">
+                        </form>
+                    </div>
+                    <div class="tab-area" id="video">
+                        <form class="video-form" method="post">
+                            <label for="video-title" class="form-label">Title</label>
+                            <div class="tab-input">
+                                <input type="text" id="video-title" class="input video-input" autocomplete="off" name="videoTitle">
+                            </div>
+                            <label for="video-category" class="form-label">Category</label>
+                            <div class="tab-input">
+                                <select name="videoCategory" class="input video-input" id="video-category">
+                                    <option value="category-1">Test1</option>
+                                    <option value="category-2">Test2</option>
+                                </select>
+                            </div>
+                            <label for="video-content" class="form-label">Video File</label>
+                            <div class="tab-input">
+                                <input type="file" id="video-content" class="input video-input" autocomplete="off" accept="video/*" name="videoContent">
+                            </div>
+                            <input type="submit" class="send-button" value="Save">
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

@@ -12,3 +12,7 @@ require(['main']);
 
 require(['signUp']);
 // require(['signIn']);
+require(['map']);
+
+
+require(['jsonParse']);

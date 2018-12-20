@@ -13,6 +13,10 @@ define('main', ['DBOpenRequest'], function(DBOpenRequest) {
         this.burgerButton = document.querySelector('.burger-button');
         this.burgerMenu = document.querySelector('.burger-dropdown');
         this.subClick = document.querySelector('.burger-navigation');
+        this.account = document.querySelector('.user-account');
+        this.submenu = document.querySelector('.user-submenu');
+        this.subLink = document.querySelector('.sub-account');
+        this.signOutButton = document.querySelector('.sign-out');
         this.init();
     }
 
@@ -29,18 +33,17 @@ define('main', ['DBOpenRequest'], function(DBOpenRequest) {
         this.signIn.addEventListener('click', function() {
             self.showModalBlock();
         }, false);
-        // Не знаю, как лучше назвать showModalBlock(), так как showModal уже занято
         this.close.addEventListener('click', function() {
             self.closeModal();
         }, false);
 
         this.signUp.addEventListener('click', function() {
             self.closeModal();
-        });
+        }, false);
 
         window.addEventListener('click', function(ev) {
             self.closeOutsideModal(ev);
-        })
+        }, false);
     };
 
     Modal.prototype.showModalBlock = function() {
@@ -59,6 +62,25 @@ define('main', ['DBOpenRequest'], function(DBOpenRequest) {
 
     Menu.prototype.init = function() {
         var self = this;
+        if (localStorage.getItem('user') !== null) {
+            var signIn = document.querySelector('.authentication');
+            var user = JSON.parse(localStorage.getItem('user'));
+            signIn.className += ' disable';
+            this.account.innerHTML = user.name;
+            this.account.className += ' active';
+
+            this.account.addEventListener('click', function () {
+                self.showProfileMenu();
+            }, false);
+
+            window.addEventListener('click', function(ev) {
+                self.closeOutsideMenu(ev);
+            }, false);
+
+            this.signOutButton.addEventListener('click', function(ev) {
+                self.signOut(ev);
+            }, false);
+        }
         this.burgerButton.addEventListener('click', function() {
             self.showMenu();
         }, false);
@@ -88,6 +110,22 @@ define('main', ['DBOpenRequest'], function(DBOpenRequest) {
         }
     };
 
+    Menu.prototype.showProfileMenu = function() {
+        this.submenu.classList.toggle('active');
+    };
+
+    Menu.prototype.closeOutsideMenu = function(ev) {
+        if (ev.target !== this.subLink && ev.target !== this.account) {
+            this.submenu.className = this.submenu.className.replace(' active', '');
+        }
+    };
+
+    Menu.prototype.signOut = function(ev) {
+        ev.preventDefault();
+        localStorage.clear();
+        route('/');
+    };
+
     SignIn.prototype.init = function() {
         var self = this;
         this.form.addEventListener('submit', function(evt) {
@@ -103,7 +141,7 @@ define('main', ['DBOpenRequest'], function(DBOpenRequest) {
             }
         }
         getPerson(this.user);
-        // evt.target.reset();
+        evt.target.reset();
     };
 
     function getPerson(user) {
@@ -121,6 +159,9 @@ define('main', ['DBOpenRequest'], function(DBOpenRequest) {
                     reqPassword.onsuccess = function(e) {
                         var match = e.target.result;
                         if (match) {
+                            var modal = document.querySelector('#signUpModal');
+                            modal.style.display = 'none';
+                            localStorage.setItem('user', JSON.stringify(user));
                             console.log('Welcome');
                         } else {
                             console.log('Try again');
@@ -134,6 +175,6 @@ define('main', ['DBOpenRequest'], function(DBOpenRequest) {
     }
 
     var modal = new Modal();
-    var menu = new Menu({ searchString: 'item-collapsed' });
+    var menu = new Menu({ searchString: 'item-collapsed'});
     var signIn = new SignIn();
 });

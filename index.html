@@ -5,11 +5,13 @@
     <title>Title</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE11" />
     <link rel="stylesheet" href="bootstrap/bootstrap.min.css">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/home.css" title="test">
     <link rel="stylesheet" href="css/media.css">
     <script data-main="app" src="js/lib/require.js"></script>
+    <script title="newTest" async defer></script>
 </head>
 <body>
 <div id="wrapper">
@@ -104,12 +106,12 @@
                             </li>
                             <li class="navigation-item">
                             <span class="item-stick">
-                                <a href="#" class="link">About us</a>
+                                <a href="/about-us" class="link">About us</a>
                             </span>
                             </li>
                             <li class="navigation-item">
                             <span class="item-stick">
-                                <a href="#" class="link">Contact</a>
+                                <a href="/contact" class="link">Contact</a>
                             </span>
                             </li>
                         </ul>
@@ -205,6 +207,11 @@
                 <div class="col-md-2 offset-md-1 col-4">
                     <div class="authentication-block">
                         <span class="authentication">Sign in</span>
+                        <span class="user-account"></span>
+                        <ul class="user-submenu">
+                            <li class="user-submenu-item"><a href="/user" class="link sub-account">Profile</a></li>
+                            <li class="user-submenu-item"><a href="#" class="link sub-account sign-out">Sign out</a></li>
+                        </ul>
                     </div>
                     <div class="popup-wrapper" id="signUpModal">
                         <div class="popup">
@@ -239,5 +246,7 @@
     </header>
     <div id="page"></div>
 </div>
+<!--<script src="" async defer></script>-->
+<!--<script src="js/jsonParse.js"></script>-->
 </body>
 </html>

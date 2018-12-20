@@ -1,0 +1,89 @@
+[
+  {
+    "id": 1,
+    "name": "Holidays",
+    "childCategories": [
+      {
+        "id": 1,
+        "name": "New Year",
+        "childCategories": [
+          {
+            "id": 1,
+            "name": "1980's"
+          },
+          {
+            "id": 2,
+            "name": "1990's"
+          },
+          {
+            "id": 3,
+            "name": "2000's"
+          }
+        ]
+      },
+      {
+        "id": 2,
+        "name": "Birthday"
+      },
+      {
+        "id": 3,
+        "name": "Christmas",
+        "childCategories": [
+          {
+            "name": "1920's"
+          },
+          {
+            "name": "1960's"
+          },
+          {
+            "name": "2010's"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "name": "Human"
+  },
+  {
+    "id": 3,
+    "name": "Animals",
+    "childCategories": [
+      {
+        "id": 1,
+        "name": "Fish"
+      },
+      {
+        "id": 2,
+        "name": "Birds"
+      },
+      {
+        "id": 3,
+        "name": "Mammals"
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "name": "Sports"
+  },
+  {
+    "id": 5,
+    "name": "Movies",
+    "childCategories": [
+      {
+        "id": 1,
+        "name": "Comedy"
+      },
+      {
+        "id": 2,
+        "name": "Detective"
+      },
+      {
+        "id": 3,
+        "name": "Thrillers"
+      }
+    ]
+  }
+]

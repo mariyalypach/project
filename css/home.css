@@ -238,6 +238,40 @@
     display: none;
 }
 
+/*========FILES-BLOCKS==========*/
+
+.files-blocks {
+    padding: 1rem 0;
+    color: #2D476B;
+}
+
+.files-item {
+    padding: 1rem;
+}
+
+.files-item-title {
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
+.file-block {
+    text-align: center;
+    border: 3px solid #2D476B;
+    margin: 1rem 0;
+}
+
+.file-title {
+    border-top: 3px solid #2D476B;
+    padding: 1.5rem 0;
+}
+
+.file-image {
+    padding: 2rem;
+}
+
+/*========END-BLOCKS==========*/
+
 .active {
     display: block;
 }

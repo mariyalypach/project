@@ -219,6 +219,49 @@ ul {
     color: #3FB75E;
 }
 
+.user-account {
+    display: none;
+    border-bottom: 1px solid #737373;
+    cursor: pointer;
+    float: left;
+    transition: .4s ease-out;
+}
+
+.user-account:hover {
+    color: #3FB75E;
+}
+
+.user-submenu {
+    display: none;
+    position: absolute;
+    padding: 0;
+    left: 0;
+    text-align: center;
+    top: 2.65rem;
+    width: 100%;
+    background: #DEE2E0;
+}
+
+.user-submenu-item {
+    cursor: pointer;
+}
+
+.user-submenu-item:first-child {
+    border-bottom: 1px solid #2D476B;
+}
+
+.user-submenu .link {
+    color: #2D476B;
+    font-weight: 700;
+    display: block;
+    font-size: .9rem;
+    padding: 1.5rem;
+}
+
+.user-submenu .link:hover{
+    color: #3FB75E;
+}
+
 .popup-wrapper {
     display: none;
     position: fixed;
@@ -341,4 +384,12 @@ ul {
 
 .sign-in-button:hover {
     background: #D82E7C;
+}
+
+.disable {
+    display: none;
+}
+
+.active {
+    display: block;
 }

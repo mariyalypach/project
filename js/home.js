@@ -1,5 +1,5 @@
-define('home', [],
-    function () {
+define('home', ['DBOpenRequest'],
+    function (DBOpenRequest) {
         function Slider(opts) {
             this.opts = opts;
             this.slides = document.querySelectorAll('#slides .slide');
@@ -14,6 +14,11 @@ define('home', [],
             this.sideBarIcon = document.querySelector('.sidebar-icon');
             this.closeSideBar = document.querySelector('.sidebar-close');
             this._paddingX = this.opts.paddingX;
+            this.init();
+        }
+
+        function Content(opts) {
+            this.opts = opts;
             this.init();
         }
 
@@ -88,9 +93,47 @@ define('home', [],
             this.sidebar.classList.toggle('active');
         };
 
+        Content.prototype.init = function () {
+            DBOpenRequest.then(function(db) {
+                var transaction = db.transaction(["text"], "readwrite");
+                var store = transaction.objectStore("text");
+                var request = store.openCursor();
+                request.onerror = function(e) {
+                    alert('error: ' + e.target.error.name);
+                };
+                request.onsuccess = function (ev) {
+                    var res = ev.target.result;
+                    if (res) {
+                        var textObj = res.value;
+                        var mainDiv = document.querySelector('.text-generation');
+                        var newDiv = document.createElement('div');
+                        newDiv.className = 'col-md-4';
+                        mainDiv.appendChild(newDiv);
+                        var fileBlock = document.createElement('div');
+                        fileBlock.className = 'file-block';
+                        newDiv.appendChild(fileBlock);
+                        var fileImage = document.createElement('div');
+                        fileImage.className = 'file-image';
+                        fileBlock.appendChild(fileImage);
+                        var img = document.createElement('img');
+                        img.src = '../img/text-file.png';
+                        fileImage.appendChild(img);
+                        var fileTitle = document.createElement('div');
+                        fileTitle.className = 'file-title';
+                        fileBlock.appendChild(fileTitle);
+                        var h4 = document.createElement('h4');
+                        h4.innerHTML = textObj.title;
+                        fileTitle.appendChild(h4);
+                        res.continue();
+                    }
+                }
+            });
+        };
+
         return {
             Slider: Slider,
-            SidebarMenu: Sidebar
+            SidebarMenu: Sidebar,
+            Content: Content
         }
     }
 );

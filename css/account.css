@@ -68,3 +68,43 @@
 .active {
     display: block;
 }
+
+.tab-area .form-label {
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.tab-input {
+    padding: 1rem 0;
+}
+
+.tab-input .input {
+    width: 100%;
+    height: 2.5rem;
+}
+
+.text-form .textarea {
+    width: 100%;
+    height: 8rem;
+    min-height: 8rem;
+    max-height: 8rem;
+    margin-bottom: 1rem;
+}
+
+.tab-area .send-button {
+    width: 100%;
+    height: 3rem;
+    background: #E83E8C;
+    cursor: pointer;
+    border: none;
+    color: #fff;
+    font-size: 1rem;
+    text-transform: uppercase;
+    margin: 1.5rem 0;
+    transition: background-color .5s ease .01ms;
+    outline: none;
+}
+
+.tab-area .send-button:hover {
+    background: #D82E7C;
+}
